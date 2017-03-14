@@ -1,0 +1,14 @@
+{#
+Copyright 2017
+wen.sheng@yale.edu
+#}
+
+resources:
+- name: a-firewall-rule
+  type: compute.v1.firewall
+  properties:
+    network: $(ref.a-new-network.selfLink)
+    sourceRange: ["0.0.0.0/0"]
+    allowed:
+    - IPProtocol: TCP
+      ports: ["80"]
