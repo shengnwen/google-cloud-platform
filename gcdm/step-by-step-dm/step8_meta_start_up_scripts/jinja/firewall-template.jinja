@@ -1,0 +1,14 @@
+{#
+Copyright 2017
+wen.sheng@yale.edu
+#}
+
+resources:
+- name: {{ env["name"] }}
+  type: compute.v1.firewall
+  properties:
+    network: $(ref.{{ properties["network"] }}.selfLink)
+    sourceRanges: ["0.0.0.0/0"]
+    allowed:
+    - IPProtocol: TCP
+      ports: ["80"]
