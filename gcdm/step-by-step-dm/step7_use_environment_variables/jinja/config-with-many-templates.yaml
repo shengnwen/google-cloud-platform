@@ -3,7 +3,6 @@
 
 imports:
 - path: vm-template.jinja
-- path: vm-template-2.jinja
 - path: network-template.jinja
 - path: firewall-template.jinja
 - path: compute-engine-template.jinja

@@ -4,11 +4,11 @@ wen.sheng@yale.edu
 #}
 
 resources:
-- name: a-firewall-rule
+- name: {{ env["name"] }}
   type: compute.v1.firewall
   properties:
-    network: $(ref.a-new-network.selfLink)
-    sourceRange: ["0.0.0.0/0"]
+    network: $(ref.{{ properties["network"] }}.selfLink)
+    sourceRanges: ["0.0.0.0/0"]
     allowed:
     - IPProtocol: TCP
       ports: ["80"]
